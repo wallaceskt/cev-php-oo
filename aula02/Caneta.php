@@ -1,0 +1,145 @@
+<?php
+/**
+* Class Caneta defineos atributos (características) e métodos (comportamentos) comuns que serão compartilhados por um objeto.
+*/
+class Caneta {
+
+	// Atributos
+	private $modelo;
+	private $cor;
+	private $ponta;
+	protected $carga;
+	protected $tampada;
+
+	// Métodos especiais de acesso
+	public function getModelo() {
+
+		return $this->modelo;
+	
+	}
+
+	public function setModelo($modelo) {
+
+		$this->modelo = $modelo;
+	
+	}
+
+	public function getCor() {
+
+		return $this->cor;
+	
+	}
+
+	public function setCor($cor) {
+
+		$this->cor = $cor;
+	
+	}
+
+	public function getPonta() {
+
+		return $this->ponta;
+
+	}
+
+	public function setPonta($ponta) {
+
+		$this->ponta = $ponta;
+
+	}
+
+	public function getCarga() {
+
+		return $this->carga;
+
+	}
+
+	public function setCarga($carga) {
+
+		$this->carga = $carga;
+
+	}
+
+	public function getTampada() {
+
+		return $this->tampada;
+
+	}
+
+	public function setTampada($tampada) {
+
+		$this->tampada = $tampada;
+
+	}
+
+	// Método construtor
+	public function __construct($modelo, $cor, $ponta) {
+
+		$this->tampada = true;
+		$this->modelo = $modelo;
+		$this->setCor($cor);
+		$this->ponta = $ponta;
+
+	}
+
+	// Métodos
+	public function rabiscar() {
+
+		if (($this->carga == 0) && ($this->tampada == true)) {
+
+			echo "<p>Erro. Caneta {$this->getModelo()} tampada ou sem carga.</p>";
+		
+		} else {
+		
+			echo "<p>Rabiscando.</p>";
+		
+		}
+	
+	}
+
+	public function tampar() {
+
+		if ($this->tampada) {
+
+			echo "<p>Caneta já tampada.</p>";
+		
+		} else {
+		
+			echo "<p>Caneta com ponta {$this->getPonta()} tampada.</p>";
+			$this->tampada = true;
+		
+		}
+
+	}
+
+	public function destampar() {
+
+		if ($this->tampada) {
+			
+			echo "<p>Caneta destampada.</p>";
+			$this->tampada = false;
+		
+		} else {
+			
+			echo "<p>Caneja já está destampada.</p>";
+
+		}
+		
+	}
+
+	public function status() {
+
+		echo "<p>========== Status ==========<br>";
+		echo "Caneta: " . $this->getModelo() . "<br>";
+		echo "Cor: " . $this->getCor() . "<br>";
+		echo "Ponta: " . $this->getPonta() . "<br>";
+		echo "Carga: " . $this->getCarga() . "<br>";
+		echo "Tampada? ";
+		echo ($this->tampada)?'Sim':'Não';
+		echo "<br>";
+		echo "========== ****** ==========</p>";
+	
+	}
+
+}
+?>
