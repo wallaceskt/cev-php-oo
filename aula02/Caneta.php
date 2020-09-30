@@ -21,19 +21,19 @@ class Caneta {
 	public function setModelo($modelo) {
 
 		$this->modelo = $modelo;
-	
+
 	}
 
 	public function getCor() {
 
 		return $this->cor;
-	
+
 	}
 
 	public function setCor($cor) {
 
 		$this->cor = $cor;
-	
+
 	}
 
 	public function getPonta() {
@@ -82,19 +82,10 @@ class Caneta {
 
 	}
 
-	// Métodos
+	// Outros métodos
 	public function rabiscar() {
 
-		if (($this->carga == 0) && ($this->tampada == true)) {
-
-			echo "<p>Erro. Caneta {$this->getModelo()} tampada ou sem carga.</p>";
-		
-		} else {
-		
-			echo "<p>Rabiscando.</p>";
-		
-		}
-	
+		return (($this->getTampada()) && ($this->getCarga() == 0)) ? "<p>[ERRO] A caneta {$this->getModelo()} está tampada ou sem carga!</p>" : "<p>{$this->getModelo()} rabiscando...</p>";
 	}
 
 	public function tampar() {
