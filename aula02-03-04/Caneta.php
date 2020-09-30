@@ -86,26 +86,6 @@ class Caneta {
 	public function rabiscar() {
 
 		return (($this->getTampada()) || ($this->getCarga() == 0)) ? "<p>[ERRO] A caneta {$this->getModelo()} está tampada ou sem carga!</p>" : "<p>{$this->getModelo()} rabiscando...</p>";
-		// $retorno = "";
-
-		// if($this->getCarga() == 0) {
-
-		// 	$retorno = "<p>[ERRO] A caneta {$this->getModelo()} está sem carga!</p>";
-			
-		// } else {
-
-		// 	if($this->getTampada()) {
-
-		// 		$this->setTampada(false);
-		// 		$retorno = "<p>A caneta {$this->getModelo()} foi destampada.</p>";
-
-		// 	}
-
-		// 	$retorno = $retorno . "<p>A caneta {$this->getModelo()} está rabiscando...</p>";
-
-		// }
-
-		// return $retorno;
 
 	}
 
@@ -147,7 +127,7 @@ class Caneta {
 		echo "Ponta: " . $this->getPonta() . "<br>";
 		echo "Carga: " . $this->getCarga() . "<br>";
 		echo "Tampada? ";
-		echo ($this->tampada)?'Sim':'Não';
+		echo ($this->tampada) ? 'Sim' : 'Não';
 		echo "<br>";
 		echo "========== ****** ==========</p>";
 	
