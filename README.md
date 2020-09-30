@@ -40,21 +40,33 @@ C++, Java, PHP, Python, Ruby, Visual Basic, Objective-C, etc.
 
 ```
 Classe Caneta
-    modelo: Caractere
-    cor: Caractere
-    ponta: Real
-    carga: Inteiro
-    tampada: Logico
+    publico modelo: Caractere
+    publico cor: Caractere
+    privado ponta: Real
+    protegido carga: Inteiro
+    protegido tampada: Logico
 
-    Método rabiscar()
+    publico Metodo rabiscar()
         Se (tampada) entao
             Escreva("Erro")
         senao
             Escreva("Rabisco")
     FimMetodo
 
-    Método tampar()
+    protegido Metodo tampar()
         tampada = verdadeiro
+    FimMetodo
+
+    protegido Metodo destampar()
+        tampada = falso
+    FimMetodo
+
+    publico Metodo status()
+        Escreva(modelo)
+        Escreva(cor)
+        Escreva(ponta)
+        Escreva(carga)
+        Escreva(tampada)
     FimMetodo
 FimClasse
 ```
@@ -69,3 +81,10 @@ c1.ponta = 0.5
 c1.tampada = falso
 c1.rabiscar()
 ```
+
+### Modificadores de visibilidade
+Indicam o nível de acesso aos componentes internos de uma classe. São três modificadores (segundo a nomeclatura da UML):
+
+- **Publico (+):** a classe atual e todas as outras classes podem ter acesso.
+- **Privado (-):** somente a classe atual vai ter acesso.
+- **Protegido (#):** a classe atual e todas as suas sub-classes podem ter acesso.

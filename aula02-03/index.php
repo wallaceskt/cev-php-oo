@@ -22,8 +22,8 @@
 		//$c1->setModelo("BIC");
 		//$c1->setCor("Azul");
 		//$c1->setPonta(0.5);
-		$c1->setCarga(50);
-		//$c1->setTampada(true);
+		$c1->setCarga(30);
+		$c1->setTampada(true);
 		//$c1->setCor("Verde");
 
 		$c1->destampar();
