@@ -4,7 +4,7 @@ Orientação a Objetos com PHP (Curso em Vídeo).
 ## O que é OO?
 - **Objetivo:** aproximar o mundo digital do mundo real.
 
-- **Criador da POO:** Alan Kay (1970). Formado em matemática e biologia, criou conceitos que podem ser aexplicados por objetos do mundo real. Ele também criou o smalltalk.
+- **Criador da POO:** Alan Kay (1970). Formado em matemática e biologia, criou conceitos que podem ser explicados por objetos do mundo real. Ele também criou o smalltalk.
 
 ### Como era
 - **Programacão baixo nível:** tudo muito físico. Baseado em microinstruções. Desenvolvidas por engenheiros.
