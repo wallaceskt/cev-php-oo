@@ -59,8 +59,9 @@ FimClasse
 
 - Instanciar: é quando eu tenho uma classe e consigo gerar um objeto a partir dela.
 
-Ex: c1 = nova Caneta
-    c1.cor = "Azul"
-    c1.ponta = 0.5
-    c1.tampada = falso
-    c1.rabiscar()
+Ex: 
+c1 = nova Caneta
+c1.cor = "Azul"
+c1.ponta = 0.5
+c1.tampada = falso
+c1.rabiscar()
