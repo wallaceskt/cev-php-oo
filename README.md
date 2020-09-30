@@ -38,6 +38,7 @@ C++, Java, PHP, Python, Ruby, Visual Basic, Objective-C, etc.
 
 - Classe: define os atributos e métodos que serão compartilhados por um objeto.
 
+```
 Classe Caneta
     modelo: Caractere
     cor: Caractere
@@ -56,12 +57,15 @@ Classe Caneta
         tampada = verdadeiro
     FimMetodo
 FimClasse
+```
 
 - Instanciar: é quando eu tenho uma classe e consigo gerar um objeto a partir dela.
 
 Ex: 
+```
 c1 = nova Caneta
 c1.cor = "Azul"
 c1.ponta = 0.5
 c1.tampada = falso
 c1.rabiscar()
+```
