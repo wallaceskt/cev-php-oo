@@ -142,8 +142,8 @@ Indicam o nível de acesso aos componentes internos de uma classe. São três mo
 ### Métodos acessores (getters)
 Métodos que dão acesso a uma determinada informação de caráter restrita. É uma segurança adicional.
 
-### Métodos modificadores (mutantes/setters)
+### Métodos modificadores/mutantes (setters)
 São métodos mais abstratos que os métodos getters. Eles modificam coisas que estão dentro do objeto. Costuma ter um parâmetro para funcionar, mas não é uma regra.
 
-### Método Construtor (construct)
-O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado.
+### Método Construtor (__construct)
+O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado. O construtor também pode ter o mesmo nome da classe.
