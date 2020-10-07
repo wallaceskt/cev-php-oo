@@ -146,4 +146,4 @@ Métodos que dão acesso a uma determinada informação de caráter restrita. É
 São métodos mais abstratos que os métodos getters. Eles modificam coisas que estão dentro do objeto. Costuma ter um parâmetro para funcionar, mas não é uma regra.
 
 ### Método Construtor (__construct)
-O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado. O construtor também pode ter o mesmo nome da classe.
+O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado.
