@@ -63,7 +63,7 @@ class ContaBanco {
             $this->setStatus(true);
             $saldo = ($this->getTipo() == "cc") ? 50 : 150;
             $this->setSaldo($saldo);
-            echo "<p>A conta está aberta. Seu saldo é de R$ {$this->getSaldo()}.</p>";
+            echo "<p>A conta está aberta. Seu saldo é de R$ " . number_format($this->getSaldo(),2,",",".") . ".</p>";
         } else {
             echo "<p>A conta já está aberta.<p>";
         }
@@ -89,8 +89,8 @@ class ContaBanco {
     public function depositar($valor) {
         if ($this->getStatus()) {
             $this->setSaldo($this->getSaldo() + $valor);
-            echo "<p>Depósito no valor de R$ {$valor} foi efetuado com sucesso.</p>";
-            echo "<p>Saldo atual: R$ {$this->getSaldo()}</p>";
+            echo "<p>Depósito no valor de R$ " . number_format($valor,2,",",".") . " foi efetuado com sucesso.</p>";
+            echo "<p>Saldo atual: R$ " . number_format($this->getSaldo(),2,",",".") . "</p>";
         } else {
             echo "<p>[ERRO] Impossível depositar! A conta está fechada.</p>";
         }
@@ -100,10 +100,10 @@ class ContaBanco {
         if ($this->getStatus()) {
             if ($this->getSaldo() >= $valor) {
                 $this->setSaldo($this->getSaldo() - $valor);
-                echo "<p>Saque no valor de R$ {$valor} efetuado com sucesso.</p>";
-                echo "<p>Saldo atual: R$ {$this->getSaldo()}</p>";
+                echo "<p>Saque no valor de R$ " . number_format($valor,2,",",".") . " efetuado com sucesso.</p>";
+                echo "<p>Saldo atual: R$ " . number_format($valor,2,",",".") . "</p>";
             } else {
-                echo "<p>[ERRO] O valor de R$ {$valor} é maior que seu saldo!</p>";
+                echo "<p>[ERRO] O valor de R$ " . number_format($valor,2,",",".") . " é maior que seu saldo!</p>";
             }
         } else {
             echo "<p>[ERRO] Impossível sacar! A conta está fechada.</p>";
@@ -119,10 +119,15 @@ class ContaBanco {
                 $v = 20;
             }
             $this->setSaldo($this->getSaldo() - $v);
-            echo "<p>Mensalidade paga no valor de R$ {$v}.</p>";
+            echo "<p>Mensalidade paga no valor de R$ " . number_format($v,2,",",".") . ".</p>";
         } else {
             echo "<p>[ERRO] Não pode pagar a mensasidade de uma conta fechada!</p>";
         }        
+    }
+
+    public function formatarMoeda($valor) {
+        return number_format($valor,2,",",".");
+        //echo money_format('%.2n', $valor);
     }
 }
 ?>
