@@ -86,7 +86,7 @@ class ControleRemoto implements IControlador {
                 $this->setVolume($this->getVolume() + 10);
                 echo "<p>Volume: <b>" . $this->getVolume();
                 $vol = " ";
-                for ($i=0; $i < $this->getVolume(); $i++) { 
+                for ($i=0; $i < $this->getVolume(); $i+=10) { 
                     $vol .= "|";
                 }
                 echo "{$vol}</b></p>";
@@ -104,7 +104,7 @@ class ControleRemoto implements IControlador {
                 $this->setVolume($this->getVolume() - 10);
                 echo "<p>Volume: <b>" . $this->getVolume();
                 $vol = " ";
-                for ($i=0; $i < $this->getVolume(); $i++) { 
+                for ($i=0; $i < $this->getVolume(); $i+=10) { 
                     $vol .= "|";
                 }
                 echo "{$vol}</b></p>";
@@ -136,7 +136,7 @@ class ControleRemoto implements IControlador {
                 $this->setVolume(50);
                 echo "<p>Volume: <b>" . $this->getVolume();
                 $vol = " ";
-                for ($i=0; $i < $this->getVolume(); $i++) { 
+                for ($i=0; $i < $this->getVolume(); $i+=10) { 
                     $vol .= "|";
                 }
                 echo "{$vol}</b></p>";
