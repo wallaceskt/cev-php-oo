@@ -120,7 +120,7 @@ class ControleRemoto implements IControlador {
         if ($this->getLigado()) {
             if ($this->getVolume() > 0) {
                 $this->setVolume(0);
-                echo "<p>Volume: X.</p>";
+                echo "<p>Volume: X</p>";
             } else {
                 //echo "<p>Volume já está mudo.</p>";
                 $this->desligarMudo();
@@ -134,7 +134,12 @@ class ControleRemoto implements IControlador {
         if ($this->getLigado()) {
             if ($this->getVolume() == 0) {
                 $this->setVolume(50);
-                echo "<p>Volume: <b>|||||</b></p>";
+                echo "<p>Volume: <b>" . $this->getVolume();
+                $vol = " ";
+                for ($i=0; $i < $this->getVolume(); $i++) { 
+                    $vol .= "|";
+                }
+                echo "{$vol}</b></p>";
             } else {
                 //echo "<p>Volume já está mudo.</p>";
                 $this->ligarMudo();
