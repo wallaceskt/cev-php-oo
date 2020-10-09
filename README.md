@@ -4,7 +4,7 @@ Orientação a Objetos com PHP (Curso em Vídeo).
 ## O que é OO?
 - **Objetivo:** aproximar o mundo digital do mundo real.
 
-- **Criador da POO:** Alan Kay (1970). Formado em matemática e biologia, criou conceitos que podem ser explicados por objetos do mundo real. Ele também criou o smalltalk.
+- **Criador da POO:** Alan Kay (1970). Formado em matemática e biologia, criou conceitos que podem ser explicados por objetos do mundo real. Ele também criou o *smalltalk*.
 
 ### Como era
 - **Programacão baixo nível:** tudo muito físico. Baseado em microinstruções. Desenvolvidas por engenheiros.
@@ -21,13 +21,13 @@ Orientação a Objetos com PHP (Curso em Vídeo).
 C++, Java, PHP, Python, Ruby, Visual Basic, Objective-C, etc.
 
 ## Vantagens da POO (COMERNada)
-- **Confiável:** o isolamento entre as partes gera software seguro. Uma parte alterada não altera a outra.
+- **Confiável:** o isolamento entre as partes gera *software* seguro. Uma parte alterada não altera a outra.
 
 - **Oportuna:** ao dividir tudo em partes, várias delas podem ser desenvolvidas em paralelo.
 
-- **Manutenível:** é fácil atualizar um software.
+- **Manutenível:** é fácil atualizar um *software*.
 
-- **Extensível:** o software não é estático. Ele deve crescer para continuar útil.
+- **Extensível:** o *software* não é estático. Ele deve crescer para continuar útil.
 
 - **Reutilizável:** objetos de um sistema podem ser reutilizados em outro.
 
@@ -146,4 +146,140 @@ Métodos que dão acesso a uma determinada informação de caráter restrita. É
 São métodos mais abstratos que os métodos getters. Eles modificam coisas que estão dentro do objeto. Costuma ter um parâmetro para funcionar, mas não é uma regra.
 
 ### Método Construtor (__construct)
-O construtor é unicamente invocado no momento da criação do objeto através do operador new. Não possui valor de retorno. O retorno do operador new é uma referência para o objeto recém-criado.
+O construtor é unicamente invocado no momento da criação do objeto através do operador *new*. Não possui valor de retorno. O retorno do operador *new* é uma referência para o objeto recém-criado.
+
+## Pilares da POO
+
+### Encapsulamento
+É uma boa prática para produzir classes mais eficazes. Um *software* encapsulado protege o usuário do código e o código do usuário (programador). Usa *interfaces*, ou seja, moldes padrão. O encapsulamento oculta partes invisíveis ao mundo exterior.
+Um bom objeto encapsulado possui uma *interface* bem definida.
+
+#### Interface
+É uma lista de serviços fornecida por um componente. É o contato com o mundo exterior, que define o que pode ser feito com um objetodessa classe. A *interface* não possui atributos, só métodos abstratos.
+
+**Métodos abstratos:** não serão desenvolvidos na *interface*. Apenas declarados. Apenas informam as ações que irão ocorrer. São apenas previstos, mas não implementados. Todos os métodos são públicos.
+
+A classe vai implementar a *interface*. A classe vai ter como métodos os métodos abstratos declarados/definidos na *interface*.
+
+Além dos métodos abstratos, é necessário ter os métodos especiais (*getters* e *setters*). Eles permitirão acessar os métodos abstratos.
+
+Quando se encapsula, a primeira coisa a fazer é tornar todos os atributos privados (até protegidos), mas nunca públicos.
+
+#### Vantagens do encapsulamento
+1. Tornar mudanças invisíveis.
+2. Facilitar a reutilização de código.
+3. Reduzir efeitos colaterais.
+
+Ex:
+```
+interface Controlador
+    // Métodos abstratos
+    publico abstrato Metodo ligar()
+    publico abstrato Metodo desligar()
+    publico abstrato Metodo abrirMenu()
+    publico abstrato Metodo fecharMenu()
+    publico abstrato Metodo maisVolume()
+    publico abstrato Metodo menosVolume()
+    publico abstrato Metodo ligarMudo()
+    publico abstrato Metodo desligarMudo()
+    publico abstrato Metodo play()
+    publico abstrato Metodo pause()
+FimInterface
+```
+
+```
+classe ControleRemoto implementa IControlador
+    // Atributos
+    privado inteiro volume
+    privado inteiro ligado
+    privado inteiro tocando
+
+    // Métodos especiais de acesso
+    publico Metodo getVolume()
+        retorne volume
+    FimMetodo
+
+    publico Metodo setVolume(vol: inteiro)
+        volume = vol
+    FimMetodo
+
+    publico Metodo getLigado()
+        retorne ligado
+    FimMetodo
+
+    publico Metodo setLigado(ligado: logico)
+        ligado = ligado
+    FimMetodo
+
+    publico Metodo getTocandoVolume()
+        retorne volume
+    FimMetodo
+
+    publico Metodo setTocandoVolume(tocando: logico)
+        tocando = tocando
+    FimMetodo
+
+    // Metodo construtor
+    volume = setVolume(50)
+    ligado = setLigado(falso)
+    tocando = setTocando(falso)
+
+    // Sobrescrevendo métodos
+    publico Metodo ligar()
+        setLigado(verdadeiro)
+    FimMetodo
+
+    publico Metodo desligar()
+        setLigado(falso)
+    FimMetodo
+
+    publico Metodo abrirMenu()
+        Escreva(getLigado())
+        Escreva(getVolume())
+        Para i = 0 ate getVolume() passo 10 Faca
+            Escreva "|"
+        FimPara
+        Escreva(getTocando())
+    FimMetodo
+
+    publico Metodo fecharMenu()
+        Escreva("Fechando menu...")
+    FimMetodo
+
+    publico Metodo maisVolume()
+        Se (getLigado()) entao
+            setVolume(getVolume() + 1)
+        FimSe
+    FimMetodo
+
+    publico Metodo menosVolume()
+        Se (getLigado()) entao
+            setVolume(getVolume() - 1)
+        FimSe
+    FimMetodo
+
+    publico Metodo ligarMudo()
+        Se (getLigado() e getVolume() > 0) entao
+            setVolume(0)
+        FimSe
+    FimMetodo
+
+    publico Metodo desligarMudo()
+        Se (getLigado() e getVolume() = 0) entao
+            setVolume(50)
+        FimSe
+    FimMetodo
+
+    publico Metodo play()
+        Se (getLigado() e nao getTocando()) entao
+            setTocando(verdadeiro)
+        FimSe
+    FimMetodo
+
+    publico Metodo pause()
+        Se (getLigado() e getTocando()) entao
+            setTocando(falso)
+        FimSe
+    FimMetodo
+FimClasse
+```
