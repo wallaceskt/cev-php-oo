@@ -139,17 +139,17 @@ class Lutador {
 
     public function ganharLuta() {
         $this->setVitorias($this->getVitorias() + 1);
-        echo "<p>Vitória!</p>";
+        //echo "<p>Vitória!</p>";
     }
 
     public function perderLuta() {
         $this->setDerrotas($this->getDerrotas() + 1);
-        echo "<p>Derrota!</p>";
+        //echo "<p>Derrota!</p>";
     }
 
     public function empatarLuta() {
         $this->setEmpates($this->getEmpates() + 1);
-        echo "<p>Empate!</p>";
+        //echo "<p>Empate!</p>";
     }
 }
 
