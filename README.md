@@ -283,3 +283,42 @@ classe ControleRemoto implementa IControlador
     FimMetodo
 FimClasse
 ```
+
+## Relacionamentos entre classes
+Há três tipos de relacionamentos entre classes: associação, agregação e generalização.
+
+### Associação entre classes
+É o tipo de relacionamento mais comum e mais importante em um sistema orientado a objetos. É um relacionamento ou ligação entre duas classes permitindo que objetos destas possam se comunicar.
+O objetivo essencial da associação é possibilitar a comunicação entre objetos de duas classes. A comunicação pode ser uni ou bidirecional.
+As associações são criadas a partir da necessidade de canais de comunicação entre objetos de duas classes. As necessidades são obtidas a partir do diagrama de sequência e de colaboração.
+
+### Agregação entre classes
+Relacionamento de pertinência entre classes.
+- Permite a inclusão de objetos de uma classe no interior de objetos de outra classe.
+Relação 'parte-de', 'tem-um', 'todo-parte'.
+Objeto que agrega conhece o agregado, mas este não conhece aquele → comunicação unidirecional.
+Um objeto pode incluir vários outros, mas não pode estar contido em mais de um objeto.
+Não existe uma técnica precisa para de se definir as agregações em um sistema.
+Sugestões:
+- Definição das agregações a partir de decomposições.
+    - Quando uma classe tem muitas responsabilidades, tende-se a dividi-la. Tal divisão pode fazer com que a classe perca sua identidade. Neste contexto, as agregações são muitos úteis
+porque dividem uma classe grande em outras menores, sem que a grande perca a identidade.
+- Definição das agregações a partir de composições
+    - O raciocínio é o inverso ao da decomposição. Aqui procura-se identificar conjuntos de objetos que juntos compõem objetos maiores.
+- Definição de agregações a partir de partes comuns
+    - Quando se percebe dentro de duas ou mais classes um conjunto de atributos e/ou métodos semelhantes. Se estes juntos possuem uma identidade, então poderia ser criada uma nova classe.
+
+#### Tipos de agregação
+
+##### Agregação por composição
+É uma agregação de fato. Realmente é feita a criação ou alocação (estática) de um objeto dentro do outro.
+Exemplo: o objeto endereco da classe Endereco está sendo instanciado dentro da classe Aluno.
+O número de objetos agregados é fixo, uma vez que são alocados dinamicamente. A notação é um losango preenchido.
+
+##### Agregação por associação
+Tem a mesma interpretação do que a agregação por composição. Entende-se que o objeto agregado é um componente do objeto que agrega.
+A alocação do objeto agregado ocorre de forma estática fora do objeto que agrega ou de forma dinâmica em seu interior.
+Sua implementação ocorre através de associações.
+São consideradas agregações quando se realiza um controle de escopo para os objetos agregados.
+Utilizada quando se deseja estabelecer uma agregação envolvendo um número variável de objetos.
+
