@@ -284,15 +284,15 @@ classe ControleRemoto implementa IControlador
 FimClasse
 ```
 
-## Relacionamentos entre classes
+#### Relacionamentos entre classes
 Há três tipos de relacionamentos entre classes: associação, agregação e generalização.
 
-### Associação entre classes
+##### Associação entre classes
 É o tipo de relacionamento mais comum e mais importante em um sistema orientado a objetos. É um relacionamento ou ligação entre duas classes permitindo que objetos destas possam se comunicar.
 O objetivo essencial da associação é possibilitar a comunicação entre objetos de duas classes. A comunicação pode ser uni ou bidirecional.
 As associações são criadas a partir da necessidade de canais de comunicação entre objetos de duas classes. As necessidades são obtidas a partir do diagrama de sequência e de colaboração.
 
-### Agregação entre classes
+##### Agregação entre classes
 Relacionamento de pertinência entre classes.
 - Permite a inclusão de objetos de uma classe no interior de objetos de outra classe.
 Relação 'parte-de', 'tem-um', 'todo-parte'.
@@ -308,17 +308,20 @@ porque dividem uma classe grande em outras menores, sem que a grande perca a ide
 - Definição de agregações a partir de partes comuns
     - Quando se percebe dentro de duas ou mais classes um conjunto de atributos e/ou métodos semelhantes. Se estes juntos possuem uma identidade, então poderia ser criada uma nova classe.
 
-#### Tipos de agregação
+###### Tipos de agregação
 
-##### Agregação por composição
+- **Agregação por composição**
 É uma agregação de fato. Realmente é feita a criação ou alocação (estática) de um objeto dentro do outro.
 Exemplo: o objeto endereco da classe Endereco está sendo instanciado dentro da classe Aluno.
 O número de objetos agregados é fixo, uma vez que são alocados dinamicamente. A notação é um losango preenchido.
 
-##### Agregação por associação
+- **Agregação por associação**
 Tem a mesma interpretação do que a agregação por composição. Entende-se que o objeto agregado é um componente do objeto que agrega.
 A alocação do objeto agregado ocorre de forma estática fora do objeto que agrega ou de forma dinâmica em seu interior.
 Sua implementação ocorre através de associações.
 São consideradas agregações quando se realiza um controle de escopo para os objetos agregados.
 Utilizada quando se deseja estabelecer uma agregação envolvendo um número variável de objetos.
+
+### Herança
+Permite basear uma nova classe na definição de uma outra classe previamente existente. A herança será aplicada tanto para as características quanto para os comportamentos. Por exemplo, as classes Aluno, Professor e Funcionario herdam as características e comportamentos da classe Pessoa (uma superclasse, uma classe principal).
 
