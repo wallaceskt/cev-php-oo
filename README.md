@@ -325,3 +325,15 @@ Utilizada quando se deseja estabelecer uma agregação envolvendo um número var
 ### Herança
 Permite basear uma nova classe na definição de uma outra classe previamente existente. A herança será aplicada tanto para as características quanto para os comportamentos. Por exemplo, as classes Aluno, Professor e Funcionario herdam as características e comportamentos da classe Pessoa (uma superclasse, uma classe principal).
 
+#### Especialização e Generalização
+A Generalização e a Especialização são conceitos usados para representar objetos do mundo real que possuem os mesmos atributos, que podem ser categorizados e que podem ser representados em uma hierarquia que mostra as dependências entre entidades de uma mesma categoria.
+Através deste conceito é possível atribuir propriedades particulares a um subconjunto das ocorrências (especializadas) de uma entidade genérica ou entidade Pai. Toda subclasse herda tudo o que a superclasse tem, mesmo que não esteja tudo disponível.
+A disponibilidade ou não é feita pelos métodos de acesso: público, privado e protegido.
+O uso da Generalização é indicado quando existe algum atributo que seja aplicável a mais de uma entidade no Modelo Entidade Relacionamento. Se existe, devemos usar a Generalização e criar  uma entidade mãe que contenha os atributos comuns às outras entidades especializadas.
+Uso da Especialização é indicado quando temos atributos específicos para um determinado sub-conjunto de ocorrências dentro de uma Entidade. Por exemplo, na entidade CLIENTES temos clientes que são empresas e outros clientes são pessoas físicas. Os clientes que são empresas possuem atributos específicos como CNPJ e Inscrição Estadual. Neste caso, podemos promover uma especialização e criar a entidade CLIENTE-EMPRESA que especializa a entidade CLIENTE e que possui atributos específicos de uma empresa.
+Não devemos usar Generalização/Especialização caso não existam atributos ou relacionamentos que justifiquem uma entidade especializada ou uma entidade mãe. Caso contrário, estaremos “poluindo” o modelo com a inserção de detalhes desnecessários. Ou seja, não faz sentido ter uma entidade especializada que não possui atributos específicos ou que não tenha um relacionamento específico com outra entidade.
+
+##### Tipos de Generalização/Especialização
+A Generalização/Especialização pode ser classificada em dois tipos: 
+1. **Parcial:** nem toda ocorrência da entidade genérica possui uma ocorrência correspondente em uma entidade especializada. Ex: nem todo funcionário é motorista.
+2. **Total:** para toda ocorrência da entidade genérica existe sempre uma ocorrência em uma das entidades especializadas. Ex: todo cliente ou é uma pessoa física ou uma pessoa jurídica.
