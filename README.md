@@ -337,3 +337,26 @@ Não devemos usar Generalização/Especialização caso não existam atributos o
 A Generalização/Especialização pode ser classificada em dois tipos: 
 1. **Parcial:** nem toda ocorrência da entidade genérica possui uma ocorrência correspondente em uma entidade especializada. Ex: nem todo funcionário é motorista.
 2. **Total:** para toda ocorrência da entidade genérica existe sempre uma ocorrência em uma das entidades especializadas. Ex: todo cliente ou é uma pessoa física ou uma pessoa jurídica.
+
+#### Tipos de herança
+
+##### Herança de implementação
+Também conhecida como herança pobre. É a mais simples que existe. Um objeto herda características somente de uma superclasse. É basicamente para implementar uma classe abstrata.
+
+##### Herança para diferença
+É a herança mais completa.
+
+#### Abstrato e Final
+Vai depender de onde se quer aplicar o conceito. Um método e uma classe podem ser abstratos e finais. Os nomes são os mesmos, mas a operacionalidade é diferente.
+
+##### Classe abstrata
+Não pode ser instanciada. Só pode servir como progenitora. Não pode gerar objetos. Tem atributos e métodos implementados.
+
+##### Método abstrato
+Declarado, mas não implementado na progenitora. Esse método só pode ser colocado dentro de uma *interface* ou dentro de uma classe abstrata.
+
+##### Classe final
+Não pode ser herdada por outra classe. É obrigatoriamente uma folha. Portanto, não pode ter filhas.
+
+##### Método final
+Não gera especialização desse método, pois não pode ser sobrescrito pelas suas subclasses. É obrigatoriamente herdado.
