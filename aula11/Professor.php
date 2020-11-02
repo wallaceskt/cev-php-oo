@@ -35,7 +35,9 @@ class Professor extends Pessoa {
     // Método construtor
     public function __construct($nome, $idade, $sexo, $especialidade, $salario) {
 
-        Parent::__construct($nome, $idade, $sexo);
+        $this->setNome($nome);
+        $this->setIdade($idade);
+        $this->setSexo($sexo);
         $this->setEspecialidade($especialidade);
         $this->setSalario($salario);
 

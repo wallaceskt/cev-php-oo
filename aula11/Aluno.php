@@ -38,7 +38,9 @@ class Aluno extends Pessoa {
     // Método construtor
     public function __construct($nome, $idade, $sexo, $matricula, $curso) {
 
-        Parent::__construct($nome, $idade, $sexo);
+        $this->setNome($nome);
+        $this->setIdade($idade);
+        $this->setSexo($sexo);
         $this->setMatricula($matricula);
         $this->setCurso($curso);
 

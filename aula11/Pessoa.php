@@ -46,15 +46,6 @@ abstract class Pessoa {
 
     }
 
-    // Método construtor
-    public function __construct($nome, $idade, $sexo) {
-
-        $this->setNome($nome);
-        $this->setIdade($idade);
-        $this->setSexo($sexo);
-
-    }
-
     // Método final (não pode ser sobrescrito)
     public final function fazerAniversario() {
 

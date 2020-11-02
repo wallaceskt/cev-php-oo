@@ -18,7 +18,10 @@
     require_once('Bolsista.php');
     require_once('Tecnico.php');
 
-    $p1 = new Visitante("Wallace Oliveira", 41, "M");
+    $p1 = new Visitante();
+    $p1->setNome("Wallace Oliveira");
+    $p1->setIdade(41);
+    $p1->setSexo("M");
     print_r($p1);
     $p1->fazerAniversario();
     print_r($p1);
