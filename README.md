@@ -360,3 +360,26 @@ Não pode ser herdada por outra classe. É obrigatoriamente uma folha. Portanto,
 
 ##### Método final
 Não gera especialização desse método, pois não pode ser sobrescrito pelas suas subclasses. É obrigatoriamente herdado.
+
+### Polimorfismo
+Permite que um mesmo nome represente vários comportamentos diferentes.
+
+#### Assinatura do método
+Todo método tem uma assinatura que consistem na quantidade e nos tipos dos parâmetros.
+
+```
+publico Metodo calMedia(n1: Real, n2: Real): Real
+    (...)
+FimMetodo
+
+publico Metodo calMedia(n1: Real, n2: Real): Inteiro
+    (...)
+FimMetodo
+```
+
+#### Tipos de polimorfismo
+Os dois principais tipos de polimorfismo são:
+
+- **Sobreposição:** Um dos polimorfismos mais utilizados. Acontece quando substituímos um método de uma superclasse na sua subclasse, usando a mesma assinatura.
+
+- **Sobrecarga:** É um pouco menos comum. 
