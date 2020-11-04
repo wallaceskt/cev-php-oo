@@ -368,10 +368,12 @@ Permite que um mesmo nome represente vários comportamentos diferentes.
 Todo método tem uma assinatura que consistem na quantidade e nos tipos dos parâmetros.
 
 ```
+// Método da superclasse
 publico Metodo calMedia(n1: Real, n2: Real): Real
     (...)
 FimMetodo
 
+// Método da superclasse sendo sobrescrito na subclasse (polimorfismo de sobreposição)
 publico Metodo calMedia(n1: Real, n2: Real): Inteiro
     (...)
 FimMetodo
